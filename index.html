@@ -1,1 +1,132 @@
-hi
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TICKTOCK</title>
+  <link rel="icon" href="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9xd2FYRGUxZ25pdGhKNnd3U2VmNy5wbmcifQ:supercell:VmQh05j9up_9e-7xelV3slILB4g6JIzVrBCVIvT0jDc?width=800" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/gun/gun.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gun/sea.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gun/axe.js" defer></script>
+  <script src="auth.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <div id="auth-container" class="auth-container">
+      <div class="auth-box">
+        <div class="brand-header">
+          <h1 class="brand-name">TICKTOCK</h1>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="login">Login</button>
+          <button class="tab-btn" data-tab="signup">Sign Up</button>
+        </div>
+        
+        <form id="login-form" class="auth-form">
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+
+        <form id="signup-form" class="auth-form hidden">
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="main-app" class="hidden">
+      <header>
+        <nav>
+          <a href="#following" class="active">Following</a>
+        </nav>
+      </header>
+
+      <div id="home" class="page">
+        <div class="messages-container">
+          <div class="message">
+            <h3>Welcome to TICKTOCK! 👋</h3>
+            <p>Start exploring and sharing your thoughts!</p>
+            <p class="disclaimer">Probably going to get blocked by the government again... lol 🤫</p>
+          </div>
+          <div class="logo-container">
+            <img src="https://ticktock-six.vercel.app/TickTock.png" alt="TICKTOCK" class="home-logo">
+          </div>
+        </div>
+      </div>
+
+      <div id="discover" class="page">
+        <div class="feed"></div>
+        <div class="empty-state">
+          <i class="fas fa-compass"></i>
+          <h2>No Posts Yet</h2>
+          <p>Be the first to share something amazing!</p>
+        </div>
+      </div>
+
+      <div id="following" class="page">
+        <div class="empty-state">
+          <i class="fas fa-users"></i>
+          <h2>No Following Yet</h2>
+          <p>Follow others to see their posts here!</p>
+        </div>
+      </div>
+
+      <div id="profile" class="page">
+        <div class="profile-container">
+          <div class="profile-header">
+            <div class="profile-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <h2>Profile Settings</h2>
+          </div>
+          <form id="username-form" class="username-form">
+            <input type="text" name="username" placeholder="New Username" required>
+            <button type="submit">Update Username</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="create-post-modal" class="create-post-modal">
+        <h2>Create New Post</h2>
+        <form id="post-form">
+          <input type="text" name="title" placeholder="Post Title" required>
+          <textarea name="content" placeholder="What's on your mind?" required></textarea>
+          <div class="modal-buttons">
+            <button type="button" class="cancel" id="cancel-post">Cancel</button>
+            <button type="submit" class="post">Post</button>
+          </div>
+        </form>
+      </div>
+      <div id="modal-overlay" class="modal-overlay"></div>
+
+      <footer>
+        <nav class="bottom-nav">
+          <a href="#home" class="active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="#discover">
+            <i class="fas fa-compass"></i>
+            <span>Discover</span>
+          </a>
+          <a href="#" class="create" id="create-post">
+            <i class="fas fa-plus"></i>
+          </a>
+          <a href="#following">
+            <i class="fas fa-users"></i>
+            <span>Following</span>
+          </a>
+          <a href="#profile">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
